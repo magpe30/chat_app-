@@ -1,0 +1,245 @@
+@import "base";
+body::before,
+body::after{
+    content:"";
+    width: 40rem;
+    height: 55rem;
+    position:absolute;
+}
+body::before{
+    background: linear-gradient($background_gradient,$background_gradient2);
+    border-bottom-right-radius: 20rem;
+    border-bottom-left-radius: 20rem;
+    top:0%;
+    right:74.5%;
+}
+body::after{
+    background:$background_gradient2;
+    border-top-right-radius: 25rem;
+    border-top-left-radius: 25rem;
+    bottom:0%;
+    opacity: 10%;
+    z-index:-1;
+    right: -10%;
+    
+}
+body{
+    margin:0;
+    padding:0;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $app_background;
+    font-family: $font_stack;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    position:relative;
+    overflow-x: hidden;
+}
+main{
+    display:flex;
+    justify-content:space-between;
+    width: 80%;
+    section{
+        width: 50%;
+    }
+}
+.phone_area{
+    display:flex;
+    justify-content: center;
+    .phone_wrapper{
+        height: 39.5rem;
+        width: 18.5rem;
+        border-radius: 2.3rem;
+        position: relative;
+        background:$app_background;
+        border: 12px solid #FFFFFF;
+        box-shadow:0 14px 26px rgba(0,0,0,0.20), 0 10px 15px rgba(0,0,0,0.20);
+    }
+    .phone_top_nav{
+        @include flex-row-space-between;
+        width: 100%;
+        height: 6rem;
+        background: linear-gradient(to left,$background_gradient,$background_gradient2);
+        padding:0;
+        border-top-left-radius: 1.6rem;
+        border-top-right-radius: 1.6rem;
+        border-bottom-right-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+        &::before{
+            content: "";
+            position: absolute;
+            height: 27px;
+            width: 150px;
+            background: #FFF;
+            left: 24.5%;
+            top:-0.5rem;
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+        .name_nav{
+            @include flex-row-space-between;
+            padding: 0;
+            margin-left: 1rem;
+            transform: translateY(1rem);
+            img{
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border: 2px #FFFFFF solid;
+                margin-left: 0.5rem;
+            }
+            i{
+                color: #FFF;
+            }
+            .person_details{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                 h1{
+                    margin:2px 0.5rem;
+                    color: #FFF;
+                    font-size: 1rem;
+                    letter-spacing:1px;
+                }
+                p{
+                    margin: 2px 0.5rem;
+                    font-size: 0.7rem;
+                    color:$text_blue;
+                }
+            }
+        }
+        .fa-ellipsis-v{
+            transform: translateY(1rem);
+            color:#FFF;
+            margin-right: 1rem;
+        }
+    }
+    .phone_body{
+        padding: 0.8rem;
+        .messages_sent{
+            @include message-sent;
+        }
+        .messages_top{
+            width: 70%;
+        }
+        .messages_middle{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            .dog_pictures{
+                display:flex;
+                justify-content: flex-end;
+                img{
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 0.7rem;
+                    margin: 0.3rem 0;
+                }
+                .dog_second{
+                    padding: 0, 0.5rem;
+                    margin-left: 0.7rem;
+                    margin-right: 0.7rem;
+                }
+            }
+            .messages_received{
+                width:70%;
+                &_1{
+                    @include message-received;
+                    text-align: left;
+                    line-height: 1rem;
+                }
+                &_2{
+                    text-align: right;
+                    @include message-received;
+                    width: 50%;
+                    float:right;
+                    margin: 0;
+                }   
+            }
+        }
+        .messages_bottom{
+            width:80%;
+            .message_sent{
+                @include message-sent;
+            }
+            .message_offer{
+                background: linear-gradient(to right,$background_gradient,$background_gradient2);
+                color: #FFF;
+                height: 2.4rem;
+                margin: 0.5rem 0;
+                @include flex-row-space-between;
+                border-top-right-radius: 1rem;
+                border-top-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                .circle{
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    background: transparent;
+                    border: 2px solid $text_greyish_violet;
+                    border-radius: 50%;
+                    margin:0 0.5rem;
+                    opacity: 50%;
+                }
+                .time{
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        font-size: 0.7rem;
+                    }
+                }
+                .price{
+                    font-weight: bold;
+                    margin-right: 0.6rem;
+                }
+            }
+        }
+        .message_input{
+            input{
+                position: absolute;
+                width: 80%;
+                height: 1.5rem;
+                outline: none;
+                border:none;
+                border-radius: 1.5rem;
+                padding: 0.3rem 1rem;
+                z-index:0;
+                margin-top: 0.8rem;
+                &::placeholder{
+                    color: $text_greyish_violet;
+                    padding-right: 0.3rem;
+                }
+            }
+            .fa-chevron-circle-right{
+              z-index:1; 
+              transform: translate(242px, 17px);
+              color: $submit_button;
+              font-size: 1.5rem;
+            }
+        }
+    }
+}
+.main_headline{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding-right: 4rem;
+
+    h1{
+        margin:0;
+        color: $submit_button;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+    p{
+        padding-right: 7rem;
+        font-size: 1.2rem;
+        color: $text_greyish_violet;
+        line-height: 1.9rem; 
+    }
+}
+@import "mobile";

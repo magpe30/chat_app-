@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+$text_violet: hsl(276, 100%, 81%);
+$text_moderate_violet: hsl(276, 55%, 52%);
+$text_dark_violet: hsl(271, 15%, 43%);
+$text_blue: hsl(206, 6%, 79%);
+$text_veryDark_violet: hsl(271, 36%, 24%);
+$text_greyish_violet: hsl(270, 7%, 64%);
+
+$background_gradient:hsl(293, 100%, 63%);
+$background_gradient2: hsl(264, 100%, 61%);
+$app_background: hsl(270, 20%, 96%);
+$submit_button:  hsl(271, 36%, 24%);
+
+$font_stack: 'Rubik', sans-serif;
+
+@mixin flex-row-space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-row-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin message-received{
+    background: #FFF;
+    padding: 0.6rem;
+    font-size: 0.7rem;
+    color:$text_greyish_violet;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem; 
+}
+@mixin message-sent{
+    background: rgba($text_violet, 0.20);
+    padding: 0.6rem;
+    font-size: 0.7rem;
+    color: $text_moderate_violet;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}

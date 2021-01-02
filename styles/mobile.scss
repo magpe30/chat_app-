@@ -1,0 +1,52 @@
+@import "base";
+@media (max-width: 800px){
+    body::before{
+        content: "";
+        width: 25rem;
+        height: 35rem;
+        top: 0%;
+        position: absolute;
+        right: 60%;
+        background: linear-gradient($background_gradient,$background_gradient2);
+        border-bottom-right-radius: 30rem;
+    }
+    body::after{
+        content: "";
+        width: 25rem;
+        height: 35rem;
+        bottom: 0%;
+        position: absolute;
+        background: $background_gradient2;
+        opacity: 10%;
+        right: -15%;
+        border-top-left-radius: 30rem;
+        z-index: -1;
+        
+    }
+    body{
+        min-height: 100vh;
+    }
+    main{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .phone_area{
+        margin-top: 2rem;
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        z-index:1;
+        input{
+            height: 1.5rem;
+        }
+    }
+    .main_headline{
+        padding-top: 5rem;
+        width:100%;
+        text-align:center;
+        p{
+            padding:0 !important;  
+        }
+        
+    }
+}
